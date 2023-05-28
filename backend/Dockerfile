@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . /app
 
 # Build the go app
-RUN go build -o main .
+RUN go env -w GO111MODULE=off && go build -o main .
 
 # Expose port
 EXPOSE 8080

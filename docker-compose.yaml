@@ -1,15 +1,15 @@
 version: '3'
 services:
   web:
+    image: 127.0.0.1:5000/web
     build: ./web
     ports:
       - "8080:80"
     depends_on:
       - backend
   backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
+    image: 127.0.0.1:5000/backend
+    build: ./backend
     ports:
       - "80:80"
 
